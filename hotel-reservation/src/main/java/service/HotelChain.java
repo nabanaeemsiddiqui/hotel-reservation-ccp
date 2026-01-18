@@ -84,4 +84,21 @@ public class HotelChain {
     private int generateReservationNumber() {
         return (int) (Math.random() * 10_000);
     }
+
+    // =========================
+// USE CASE: cancelReservation
+// =========================
+public void cancelReservation(Reservation reservation) {
+
+    if (reservation == null) {
+        throw new IllegalArgumentException("Reservation cannot be null");
+    }
+
+    if (hotel == null) {
+        throw new IllegalStateException("No hotel registered in chain");
+    }
+
+    hotel.removeReservation(reservation);
+}
+
 }

@@ -38,4 +38,15 @@ public Room findFreeRoomByType(RoomType roomType) {
     throw new IllegalStateException("No free room available");
 }
 
+public void removeReservation(Reservation reservation) {
+    if (reservation == null) {
+        throw new IllegalArgumentException("Reservation cannot be null");
+    }
+
+    if (!reservations.remove(reservation)) {
+        throw new IllegalStateException("Reservation does not exist");
+    }
+}
+
+
 }
