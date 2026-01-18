@@ -34,4 +34,12 @@ public class Reservation {
     public int getNumber() {
         return number;
     }
+
+    public void setReserverPayer(ReserverPayer reserverPayer) {
+    if (reserverPayer == null) {
+        throw new IllegalArgumentException("ReserverPayer cannot be null");
+    }
+    this.reserverPayer = reserverPayer;
+}
+
 }

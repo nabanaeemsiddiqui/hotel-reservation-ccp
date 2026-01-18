@@ -21,4 +21,21 @@ public class Hotel {
     public String getName() {
         return name;
     }
+
+    public void addReservation(Reservation reservation) {
+    if (reservation == null) {
+        throw new IllegalArgumentException("Reservation cannot be null");
+    }
+    reservations.add(reservation);
+}
+
+public Room findFreeRoomByType(RoomType roomType) {
+    for (Room room : rooms) {
+        if (room.isFree()) {
+            return room;
+        }
+    }
+    throw new IllegalStateException("No free room available");
+}
+
 }
